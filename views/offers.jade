@@ -1,0 +1,145 @@
+extends layout
+
+block content
+    .row-fluid
+        .span3
+            .well.sidebar-nav
+                .btn-group.qalc-select
+                    a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+                        | Qalc Type
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href='#') Cars
+                        li
+                            a(href='#') Real Estate
+                        li
+                            a(href='#') Etc
+                ul.nav.nav-list
+                    li.nav-header Car Qalcs
+                    li.active
+                        a(href='/offers')
+                            i.icon-inbox
+                            | Offers
+                            span.badge.badge-inverse 3
+                    li
+                        a(href='/myqalcs')
+                            i.icon-th
+                            | My Qalcs
+                    li
+                        a(href='/createqalc')
+                            i.icon-plus
+                            | Create Qalc
+                    li.divider
+                    li
+                        a(href='#')
+                            i.icon-wrench
+                            | Settings
+                    li
+                        a(href='#')
+                            i.icon-off
+                            | Logout
+        .span9
+            .btn-group
+                button.btn.active All
+                button.btn New
+                button.btn Viewed
+                button.btn Accepted
+                button.btn Rejected
+        .span9
+            .row-fluid
+                ul.thumbnails
+                    li.span3
+                        .thumbnail(style='padding: 0;')
+                            div(style='padding: 4px;')
+                                img(alt='300x200', style='width: 100%;', src='http://placehold.it/200x150')
+                            .caption
+                                h2 Offer A
+                                p Car description
+                                p
+                                    i.icon.icon-map-marker
+                                    | City, State
+                            .modal-footer
+                                .row-fluid
+                                    .span4
+                                        b $15,000
+                                        br
+                                        small Quote
+                                    .span4
+                                        b 6%
+                                        br
+                                        small Interest
+                                    .span4
+                                        b 48
+                                        br
+                                        small Months
+                                    .span12(style='text-align: center;')
+                                        h3
+                                            | $352.28
+                                            small /mo
+                            .modal-footer(style='text-align: center;')
+                                .btn-group
+                                    button.btn.btn-primary Accept
+                                    button.btn.btn-danger Reject
+                    li.span3
+                        .thumbnail(style='padding: 0;')
+                            div(style='padding: 4px;')
+                                img(alt='300x200', style='width: 100%;', src='http://placehold.it/200x150')
+                            .caption
+                                h2 Offer B
+                                p Car description
+                                p
+                                    i.icon.icon-map-marker
+                                    | City, State
+                            .modal-footer
+                                .row-fluid
+                                    .span4
+                                        b $15,000
+                                        br
+                                        small Quote
+                                    .span4
+                                        b 6%
+                                        br
+                                        small Interest
+                                    .span4
+                                        b 48
+                                        br
+                                        small Months
+                                    .span12(style='text-align: center;')
+                                        h3
+                                            | $352.28
+                                            small /mo
+                            .modal-footer(style='text-align: center;')
+                                .btn-group
+                                    button.btn.btn-danger(disabled='disabled') Rejected
+                    li.span3
+                        .thumbnail(style='padding: 0;')
+                            div(style='padding: 4px;')
+                                img(alt='300x200', style='width: 100%;', src='http://placehold.it/200x150')
+                            .caption
+                                h2 Offer C
+                                p Car description
+                                p
+                                    i.icon.icon-map-marker
+                                    | City, State
+                            .modal-footer
+                                .row-fluid
+                                    .span4
+                                        b $15,000
+                                        br
+                                        small Quote
+                                    .span4
+                                        b 6%
+                                        br
+                                        small Interest
+                                    .span4
+                                        b 48
+                                        br
+                                        small Months
+                                    .span12(style='text-align: center;')
+                                        h3
+                                            | $352.28
+                                            small /mo
+                            .modal-footer(style='text-align: center;')
+                                .btn-group
+                                    button.btn.btn-primary(disabled='disabled') Accepted

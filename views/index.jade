@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    .row
+        .span6
+            h1 Quote Qalq
+            p.lead
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+        .span6
+            #loginModal
+              .modal-body
+                .well
+                  ul.nav.nav-tabs
+                    li.active
+                      a(href='#login', data-toggle='tab') Login
+                    li
+                      a(href='#create', data-toggle='tab') Create Account
+                  #myTabContent.tab-content
+                    #login.tab-pane.active.in
+                      form(action='', method='POST')
+                        label Username
+                        input(type='text', value='')
+                        label Password
+                        input(type='password', value='')
+                        script
+                          function login() {window.location.href = '/offers'}
+                        div
+                          button.btn.btn-primary(onclick='login()') Login
+                        label(style='text-align: center; margin-top: 5px;') or
+                        input#sign-in-google.btn.btn-primary.btn-block(type='button', value='Sign In with Google', onclick='login()')
+                        input#sign-in-twitter.btn.btn-primary.btn-block(type='button', value='Sign In with Twitter', onclick='login()')
+                        input#sign-in-facebook.btn.btn-primary.btn-block(type='button', value='Sign In with Facebook', onclick='login()')
+                    #create.tab-pane.fade
+                      form#tab
+                        label Username
+                        input(type='text', value='')
+                        label First Name
+                        input(type='text', value='')
+                        label Last Name
+                        input(type='text', value='')
+                        label Email
+                        input(type='text', value='')
+                        label Password
+                        input(type='password', value='')
+                        div
+                          button.btn.btn-primary Create Account

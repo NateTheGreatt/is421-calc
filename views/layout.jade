@@ -1,0 +1,19 @@
+doctype 5
+html
+    head
+        title=Stemix
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        link(rel='stylesheet', href='/css/bootstrap-responsive.css')
+        link(rel='stylesheet', href='/css/style.css')
+        script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js')
+        script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+        script(type='text/javascript', src='/js/bootstrap.js')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    body
+        .container
+            block header
+                include header
+            block content
+            block footer
+                include footer

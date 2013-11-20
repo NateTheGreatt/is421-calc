@@ -1,0 +1,119 @@
+extends layout
+
+block content
+    .row-fluid
+        .span3
+            .well.sidebar-nav
+                .btn-group.qalc-select
+                    a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
+                        | Qalc Type
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href='#') Cars
+                        li
+                            a(href='#') Real Estate
+                        li
+                            a(href='#') Etc
+                ul.nav.nav-list
+                    li.nav-header Car Qalcs
+                    li
+                        a(href='/offers')
+                            i.icon-inbox
+                            | Offers
+                            span.badge.badge-inverse 3
+                    li
+                        a(href='/myqalcs')
+                            i.icon-th
+                            | My Qalcs
+                    li.active
+                        a(href='/createqalc')
+                            i.icon-plus
+                            | Create Qalc
+                    li.divider
+                    li
+                        a(href='#')
+                            i.icon-wrench
+                            | Settings
+                    li
+                        a(href='#')
+                            i.icon-off
+                            | Logout
+        .span9
+            .row-fluid
+                .span6
+                    h4 Add a Picture
+                    img(src='http://placehold.it/400x250&text=click+to+add+a+picture', style='margin-bottom: 5px;')
+                    .input-prepend.input-append
+                        span.add-on
+                            i.icon-picture
+                        input(type='text', name='')
+                        button.btn(type='button') Upload
+                    hr
+                    h4 Add Some Audio
+                    .btn-group(style='margin-bottom: 5px;')
+                        a.btn.btn-inverse(href='#')
+                            i.icon-white.icon-stop
+                        a.btn.btn-inverse(href='#')
+                            i.icon-white.icon-play
+                    .input-prepend.input-append
+                        span.add-on
+                            i.icon-music
+                        input(type='text', name='')
+                        button.btn(type='button') Upload
+                    hr
+                    h4 Add a Comment
+                    form(accept-charset='UTF-8', action='', method='POST')
+                        textarea#new_message.span12(name='new_message', placeholder='Type in your message', rows='5')
+                        h6.pull-right 320 characters remaining
+                        button.btn.btn-info(type='submit') Add Comment
+                .span6
+                    form#quoteForm.form-horizontal(action='/createqalc', method='POST', accept-charset='utf-8')
+                        .control-group
+                            label.control-label
+                                | Desired Loan Amount
+                            .controls
+                                input(type='text', name='amount', placeholder='$')
+                        .control-group
+                            label.control-label(for='address')
+                                | Loan Term
+                            .controls
+                                .span4
+                                    select.input-block-level(name='term')
+                                        option(value='months') Months
+                                        option(value='years') Years
+                                .span3
+                                    input.input-block-level(type='text', name='termLength')
+                        .control-group
+                            label.control-label
+                                | Interest Rate
+                            .controls
+                                input(type='text', name='interest', placeholder='%')
+                        .control-group
+                            label.control-label(for='city')
+                                | Loan Start Date
+                            .controls
+                                .row-fluid
+                                    .span4
+                                        select.input-block-level(name='month')
+                                            option January
+                                            option ...
+                                            option December
+                                    .span3
+                                        select.input-block-level(name='day')
+                                            option 1
+                                            option ...
+                                            option 31
+                                    .span4
+                                        select.input-block-level(name='year')
+                                            option 2013
+                                            option ...
+                                            option 2015
+                        hr
+                        .control-group
+                            label.control-label
+                                | Monthly Payment
+                            .controls
+                                input(type='text', name='monthly', placeholder='$', disabled='disabled')
+                        .form-actions
+                            button.btn.btn-large.btn-primary(type='submit') Create Qalc
