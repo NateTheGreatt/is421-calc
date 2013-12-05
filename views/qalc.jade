@@ -1,0 +1,133 @@
+!!! 5
+html(lang='en')
+  head
+    title Welcome - The Qalculator App
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // Bootstrap
+    link(href='css/bootstrap.css', rel='stylesheet', media='screen')
+    // FontAwesome
+    link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css', rel='stylesheet')
+    // CSS
+    link(href='css/style.css', rel='stylesheet')
+    link(href='./css/bootstrap-responsive.css', rel='stylesheet')
+    // Social buttons
+    link(href='css/social-buttons.css', rel='stylesheet')
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand Qalculator
+          .nav-collapse
+            // Other nav bar content
+            ul.nav
+              ul.nav.navbar-nav
+                li
+                  a(href='/QalcSelect')
+                    i.icon-home
+                    | Home
+                li
+                  a(href='/MyQalc')
+                    i.icon-th-large
+                    | My Qalculators
+                li
+                  a(href='/OfferF')
+                    i.icon-usd
+                    | My Offers
+            ul.nav.navbar-nav.pull-right
+              li
+                a(href='/Login')
+                  i.icon-off
+                  | Logout
+              li
+                a(href='/Login')
+                  i.icon-wrench
+                  | Setting
+    br
+    br
+    br
+    .container
+      .tab-content
+        .span9
+          .row-fluid
+            .span6
+              h4 Add a Picture
+              img(src='http://placehold.it/400x250&text=click+to+add+a+picture', style='margin-bottom: 5px;')
+              .input-prepend.input-append
+                span.add-on
+                  i.icon-picture
+                input(type='text', name='')
+                button.btn(type='button') Upload
+              hr
+              h4 Add Some Audio
+              .btn-group(style='margin-bottom: 5px;')
+                a.btn.btn-inverse(href='#')
+                  i.icon-white.icon-stop
+                a.btn.btn-inverse(href='#')
+                  i.icon-white.icon-play
+              .input-prepend.input-append
+                span.add-on
+                  i.icon-music
+                input(type='text', name='')
+                button.btn(type='button') Upload
+              hr
+              h4 Add a Comment
+              form(accept-charset='UTF-8', action='', method='POST')
+                textarea#new_message.span12(name='new_message', placeholder='Type in your message', rows='5')
+                h6.pull-right 320 characters remaining
+                button.btn.btn-info(type='submit') Add Comment
+            .span6
+              form#billingform.form-horizontal(accept-charset='utf-8')
+                .control-group
+                  label.control-label Desired Loan Amount
+                  .controls
+                    input(type='text', placeholder='$')
+                .control-group
+                  label.control-label(for='address') Loan Term
+                  .controls
+                    .span4
+                      select.input-block-level
+                        option Months
+                        option Years
+                    .span3
+                      input.input-block-level(type='text')
+                .control-group
+                  label.control-label Interest Rate
+                  .controls
+                    input(type='text', placeholder='%')
+                .control-group
+                  label.control-label(for='city') Loan Start Date
+                  .controls
+                    .row-fluid
+                      .span4
+                        select.input-block-level
+                          option January
+                          option ...
+                          option December
+                      .span3
+                        select.input-block-level
+                          option 1
+                          option ...
+                          option 31
+                      .span4
+                        select.input-block-level
+                          option 2013
+                          option ...
+                          option 2015
+                hr
+                .control-group
+                  label.control-label Monthly Payment
+                  .controls
+                    input(type='text', placeholder='$', disabled='disabled')
+                .form-actions
+                  button.btn.btn-large.btn-primary(type='submit') Create Qalc
+      .container
+        .row-fluid
+          .span12
+            .span8
+              a(href='#') Terms of Service
+              a(href='#') Privacy
+              a(href='#') Security
+            .span4
+              p.muted.pull-right © 2013 Qalculator App. All rights reserved
+      script(src='./js/jquery.js')
+      script(src='./js/bootstrap.js')
