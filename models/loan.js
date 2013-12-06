@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema;
 
-/* Catches all the loan info*/
+/* Catches all the loan data*/
 
 var LoanSchema = new Schema({
   msrp: Number,

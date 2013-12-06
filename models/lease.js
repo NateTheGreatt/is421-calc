@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
   , Schema = mongoose.Schema;
 
-/* Our schema which we'll store whatever they're looking to send back to the requestor.*/
+/* Catches all the lease data*/
 
 var LeaseSchema = new Schema({
   msrp: Number,
