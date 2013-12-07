@@ -1,0 +1,171 @@
+!!! 5
+html(lang='en')
+head
+    title Welcome - The Qalculator App
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //
+       Bootstrap 
+    link(href='css/bootstrap.css', rel='stylesheet', media='screen')
+    //
+       FontAwesome 
+    link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css', rel='stylesheet')
+    //
+       CSS 
+    link(href='css/style.css', rel='stylesheet')
+    link(href='./css/bootstrap-responsive.css', rel='stylesheet')
+    //
+       Social buttons 
+    link(href='css/social-buttons.css', rel='stylesheet')
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand Qalculator
+          .nav-collapse
+            //
+               Other nav bar content 
+            ul.nav
+              ul.nav.navbar-nav
+                li
+                  a(href='/QalcSelect')
+                    i.icon-home
+                    | Home
+                li
+                  a(href='/MyQalc')
+                    i.icon-th-large
+                    | My Qalculators
+                li
+                  a(href='/OfferF')
+                    i.icon-usd
+                    | My Offers
+            ul.nav.navbar-nav.pull-right
+              li
+                a(href='/login')
+                  i.icon-off
+                  | Logout
+              li
+                a(href='/login')
+                  i.icon-wrench
+                  | Setting
+    br
+    br
+    br
+    center
+      h3 Choose a Qalculator
+    .well
+      #myCarousel.carousel.slide
+        ol.carousel-indicators
+          li.active(data-target='#myCarousel', data-slide-to='img/0')
+          li(data-target='#myCarousel', data-slide-to='img/1')
+          li(data-target='#myCarousel', data-slide-to='img/2')
+        //
+           Carousel items 
+        .carousel-inner
+          .item.active
+            .row-fluid
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/1.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/2.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/3.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/4.jpg', alt='Image', style='max-width: 100%;')
+            //
+              /row-fluid
+          //
+            /item
+          .item
+            .row-fluid
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/5.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/6.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/7.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/8.jpg', alt='Image', style='max-width: 100%;')
+            //
+              /row-fluid
+          //
+            /item
+          .item
+            .row-fluid
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/9.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/10.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/11.jpg', alt='Image', style='max-width: 100%;')
+              .span3
+                a.thumbnail(href='/qalc')
+                  img(src='img/12.jpg', alt='Image', style='max-width: 100%;')
+            //
+              /row-fluid
+          //
+            /item
+        //
+          /carousel-inner
+        a.left.carousel-control(href='#myCarousel', data-slide='prev') ‹
+        a.right.carousel-control(href='#myCarousel', data-slide='next') ›
+      //
+        /myCarousel
+    //
+      /well
+    //
+       This is just a little bit of custom CSS code to enhance things. Feel free to place this in your main CSS file. I've commented to say what each bit does. 
+    style(type='text/css')
+      /* Removes the default 20px margin and creates some padding space for the indicators and controls */
+      .carousel {
+      margin-bottom: 0;
+      padding: 0 40px 30px 40px;
+      }
+      /* Reposition the controls slightly */
+      .carousel-control {
+      left: -12px;
+      }
+      .carousel-control.right {
+      right: -12px;
+      }
+      /* Changes the position of the indicators */
+      .carousel-indicators {
+      right: 50%;
+      top: auto;
+      bottom: 0px;
+      margin-right: -19px;
+      }
+      /* Changes the colour of the indicators */
+      .carousel-indicators li {
+      background: #c0c0c0;
+      }
+      .carousel-indicators .active {
+      background: #333333;
+      }
+    script(type='text/javascript')
+      $(document).ready(function() {
+      $('#myCarousel').carousel({
+      interval: 10000
+      })
+      });
+    .container
+      .row-fluid
+        .span12
+          .span8
+            a(href='#') Terms of Service
+            a(href='#') Privacy
+            a(href='#') Security
+          .span4
+            p.muted.pull-right © 2013 Qalculator App. All rights reserved
+    script(src='http://code.jquery.com/jquery.js')
+    script(src='js/bootstrap.min.js')
