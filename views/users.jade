@@ -1,0 +1,58 @@
+!!! 5
+html(lang='en')
+head
+    title Qalc Login
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    //
+       Bootstrap 
+    link(href='css/bootstrap.css', rel='stylesheet', media='screen')
+    //
+       FontAwesome 
+    link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css', rel='stylesheet')
+    //
+       CSS 
+    link(href='css/style.css', rel='stylesheet')
+    //
+       Social buttons 
+    link(href='css/social-buttons.css', rel='stylesheet')
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand Qalculator
+          .nav-collapse
+            //
+               Other nav bar content 
+            //
+               The drop down menu 
+            ul.nav.pull-right
+              li.divider-vertical
+              li.dropdown
+    .image(style='margin-top: 25px;')
+      img(border='0', src='QalculatorGuy.jpg', alt='Calculator', width='500', height='300')
+    .login(style='margin-top: 25px;')
+      .row
+        .span4.offset4
+          .well
+            legend Create an Account
+    form.form-horizontal(method="post", action='/users/add', enctype="multipart/form-data")
+      .control-group
+        label.control-label(for='username') User Names
+        .controls
+          input#title.input-input-xlarge(type='text', name="username", placeholder='Enter the username')
+      .control-group
+        label.control-label(for='password') Password 
+        .controls
+          input#cid.input-input-xlarge(type='password', name="password", placeholder='Enter the password')
+       input(type='submit',value='Save')
+    .container
+      .row-fluid
+        .span12
+          .span8
+            a(href='#') Terms of Service
+            a(href='#') Privacy
+            a(href='#') Security
+          .span4
+            p.muted.pull-right © 2013 Qalculator App. All rights reserved
+    script(src='http://code.jquery.com/jquery.js')
+    script(src='js/bootstrap.min.js')
