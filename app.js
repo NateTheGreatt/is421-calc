@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -30,7 +29,12 @@ app.configure(function(){
   app.set('title', 'Qalc');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
+  app.use(express.bodyParser({
+      keepExtensions: true,
+      uploadDir: __dirname+'/public/uploads',
+      limit: '10mb',
+      defer: true
+  }));
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
   app.use(express.session());
@@ -39,6 +43,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(require('stylus').middleware(__dirname + '/public'));
   app.use(express.static(path.join(__dirname, 'public')));
+  app.locals.pretty = true;
 });
 
 app.configure('development', function(){
