@@ -13,7 +13,7 @@ var express = require('express')
 
 var app = express();
 var env = process.env.NODE_ENV || 'development';
-var config = require('./config/config')[env];
+//var config = require('./config/config')[env];
 //Bootstrap db connection
 mongoose.connect('mongodb://localhost/learning');
 require('./models/user');
@@ -51,7 +51,7 @@ app.configure('development', function(){
 });
 
 // Bootstrap routes
-require('./routes')(app);
+require('./controllers/router')(app);
 
 
 http.createServer(app).listen(app.get('port'), function(){
