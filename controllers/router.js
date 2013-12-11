@@ -21,7 +21,7 @@ module.exports = function(app) {
     });
 
     app.get('/MyQalc', function(req, res) {
-        res.render('MyQalc')
+        res.render('MyQalc');
     });
 
     app.get('/offerF', function(req, res) {
