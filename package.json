@@ -1,5 +1,5 @@
 {
-    "name": "Quote Calc",
+    "name": "qalc",
     "version": "0.0.1",
     "private": true,
     "scripts": {
@@ -10,6 +10,10 @@
         "jade": "*",
         "stylus": "*",
         "mongoose": "*",
-        "socket.io": "*"
+        "socket.io": "*",
+        "passport": "*",
+        "passport-local": "*",
+        "connect-flash": "*",
+        "passport-local-mongoose": "*"
     }
 }

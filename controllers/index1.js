@@ -1,13 +1,18 @@
+
+
+
 module.exports = function(app) {
     // initialize mongoose
     var mongoose = require('mongoose');
-    
+
     // create file schema for mongo
     var Schema = mongoose.Schema;
     var FileSchema = new Schema({
         name: {type: String, required: true, unique: true}
     });
     var File = mongoose.model('File', FileSchema);
+
+
 
     app.get('/', function(req, res) {
         res.render('login');
@@ -22,22 +27,22 @@ module.exports = function(app) {
     });
 
     app.get('/MyQalc', function(req, res) {
-        res.render('MyQalc');
+        res.render('MyQalc')
     });
 
     app.get('/offerF', function(req, res) {
         res.render('offerF');
     });
-     app.get('/qalc', function(req, res) {
+    app.get('/qalc', function(req, res) {
         res.render('qalc');
     });
-    
+
     // upload form and processing
     // files uploaded to /public/uploads
     app.get('/upload', function(req, res) {
         res.render('upload_form');
     });
-    
+
     app.post("/upload", function (req, res) {
         req.form.on('end', function(){
             var filename = req.files.file.path.split('\\');
@@ -58,7 +63,7 @@ module.exports = function(app) {
             });
         });
     });
-    
+
     // view the files stored in mongo
     app.get('/viewfiles', function (req, res) {
         File.find({}, function(error, data) {
