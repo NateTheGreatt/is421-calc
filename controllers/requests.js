@@ -30,7 +30,7 @@ exports.addLoanRequest = function(req, res) {
 	{
 		status : "draft",	// TODO status field - define constants. draft, submitted, reviewed
 		calcType : "loan",	// TODO calcType field - define constants. lease, loan...
-		//req_obj : loanObj	// TODO Fix issue with error [RangeError: Maximum call stack size exceeded] when including
+		req_obj : loanObj.toObject()
 	}, {
 		safe : true,
 		upsert : true
