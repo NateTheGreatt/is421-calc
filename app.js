@@ -15,7 +15,7 @@ var app = express();
 var env = process.env.NODE_ENV || 'development';
 //var config = require('./config/config')[env];
 //Bootstrap db connection
-mongoose.connect('mongodb://localhost/learning');
+mongoose.connect('mongodb://localhost/qalc');
 
 //Define our models
 require('./models/user');
