@@ -19,8 +19,10 @@ mongoose.connect('mongodb://localhost/qalc');
 
 //Define our models
 require('./models/user');
-require('./models/lease');
-require('./models/loan');
+require('./models/leaseRequest');
+require('./models/loanRequest');
+require('./models/leaseResponse');
+require('./models/loanResponse');
 require('./models/request');
 
 app.use(flash());
