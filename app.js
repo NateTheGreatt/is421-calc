@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -14,7 +13,7 @@ var express = require('express')
 
 var app = express();
 var env = process.env.NODE_ENV || 'development';
-var config = require('./config/config')[env];
+//var config = require('./config/config')[env];
 //Bootstrap db connection
 mongoose.connect('mongodb://localhost/learning');
 require('./models/user');
