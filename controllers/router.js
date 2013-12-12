@@ -37,7 +37,7 @@ module.exports = function(app) {
     });
      
      
-     app.post('/createQalc', requests.addLoan);
+     app.post('/createQalc', requests.addLoanRequest);
      
     
     // upload form and processing
