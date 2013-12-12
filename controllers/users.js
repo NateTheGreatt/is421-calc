@@ -15,6 +15,7 @@ exports.list = function(req, res) {
     });
  });
 }
+
 exports.jsonlist = function(req, res) {
   User.find({},'username _id', function(err, users) {
     res.send(users);
@@ -28,7 +29,7 @@ exports.auth = function (req, res) {
    } else {
    req.flash('info', 'Flash is back!'); 
    userVal = req.user.username;
-   res.render('user', {
+   res.render('qalcSelect', {
       title: 'Welcome '+ userVal,
       id: 'id',
       username: User.username,
