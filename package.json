@@ -1,5 +1,5 @@
 {
-    "name": "application-name",
+    "name": "qalc",
     "version": "0.0.1",
     "private": true,
     "scripts": {
@@ -10,9 +10,10 @@
         "jade": "*",
         "stylus": "*",
         "mongoose": "*",
+        "socket.io": "*",
         "passport": "*",
         "passport-local": "*",
-        "passport-local-mongoose": "*",
-        "connect-flash": "*"
+        "connect-flash": "*",
+        "passport-local-mongoose": "*"
     }
 }
