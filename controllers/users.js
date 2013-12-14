@@ -15,6 +15,7 @@ exports.list = function(req, res) {
     });
  });
 }
+
 exports.jsonlist = function(req, res) {
   User.find({},'username _id', function(err, users) {
     res.send(users);
