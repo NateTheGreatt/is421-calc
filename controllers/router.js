@@ -9,6 +9,11 @@ module.exports = function(app) {
     });
     var File = mongoose.model('File', FileSchema);
 
+    /*Controllers setup
+     * */
+    var requests = require('./requests');
+    
+    
     app.get('/', function(req, res) {
         res.render('login');
     });
@@ -31,6 +36,10 @@ module.exports = function(app) {
      app.get('/qalc', function(req, res) {
         res.render('qalc');
     });
+     
+     
+     app.post('/createQalc', requests.addLoanRequest);
+     
     
     // upload form and processing
     // files uploaded to /public/uploads
