@@ -7,6 +7,7 @@ var RequestSchema = new Schema({
   userId: String,
   status: String,
   calcType: String,
+  req_obj: Schema.Types.Mixed,
   resp_obj: []
 });
 
