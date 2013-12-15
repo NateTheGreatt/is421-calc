@@ -13,23 +13,35 @@ var express = require('express')
 
 var app = express();
 var env = process.env.NODE_ENV || 'development';
-//var config = require('./config/config')[env];
+
 //Bootstrap db connection
-mongoose.connect('mongodb://localhost/learning');
+mongoose.connect('mongodb://localhost/qalc');
 require('./models/user');
+require('./models/leaseRequest');
+require('./models/loanRequest');
+require('./models/leaseResponse');
+require('./models/loanResponse');
+require('./models/request');
+
 app.use(flash());
 var User = mongoose.model("User");
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
 app.configure(function(){
-  app.set('port', process.env.PORT || 3002);
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.set('title', 'Qalc');
   app.use(express.favicon());
   app.use(express.logger('dev'));
-  app.use(express.bodyParser());
+  app.use(express.bodyParser({
+      keepExtensions: true,
+      uploadDir: __dirname+'/public/uploads',
+      limit: '10mb',
+      defer: true
+  }));
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
   app.use(express.session());
@@ -38,6 +50,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(require('stylus').middleware(__dirname + '/public'));
   app.use(express.static(path.join(__dirname, 'public')));
+  app.locals.pretty = true;
 });
 
 app.configure('development', function(){

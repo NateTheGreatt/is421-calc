@@ -68,44 +68,44 @@ block content
                         h6.pull-right 320 characters remaining
                         button.btn.btn-info(type='submit') Add Comment
                 .span6
-                    form#quoteForm.form-horizontal(action='/createqalc', method='POST', accept-charset='utf-8')
+                    form#billingform.form-horizontal(accept-charset='utf-8')
                         .control-group
                             label.control-label
                                 | Desired Loan Amount
                             .controls
-                                input(type='text', name='amount', placeholder='$')
+                                input(type='text', placeholder='$')
                         .control-group
                             label.control-label(for='address')
                                 | Loan Term
                             .controls
                                 .span4
-                                    select.input-block-level(name='term')
-                                        option(value='months') Months
-                                        option(value='years') Years
+                                    select.input-block-level
+                                        option Months
+                                        option Years
                                 .span3
-                                    input.input-block-level(type='text', name='termLength')
+                                    input.input-block-level(type='text')
                         .control-group
                             label.control-label
                                 | Interest Rate
                             .controls
-                                input(type='text', name='interest', placeholder='%')
+                                input(type='text', placeholder='%')
                         .control-group
                             label.control-label(for='city')
                                 | Loan Start Date
                             .controls
                                 .row-fluid
                                     .span4
-                                        select.input-block-level(name='month')
+                                        select.input-block-level
                                             option January
                                             option ...
                                             option December
                                     .span3
-                                        select.input-block-level(name='day')
+                                        select.input-block-level
                                             option 1
                                             option ...
                                             option 31
                                     .span4
-                                        select.input-block-level(name='year')
+                                        select.input-block-level
                                             option 2013
                                             option ...
                                             option 2015
@@ -114,6 +114,6 @@ block content
                             label.control-label
                                 | Monthly Payment
                             .controls
-                                input(type='text', name='monthly', placeholder='$', disabled='disabled')
+                                input(type='text', placeholder='$', disabled='disabled')
                         .form-actions
                             button.btn.btn-large.btn-primary(type='submit') Create Qalc

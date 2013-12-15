@@ -2,15 +2,34 @@
     h3.muted Quote Qalc
         .navbar
             .navbar-inner
-                .container
-                    ul.nav
-                        li.active
-                            a(href='#') Home
-                        li
-                            a(href='#') Dashboard
-                        li
-                            a(href='#') Services
-                        li
-                            a(href='#') About
-                        li
-                            a(href='#') Contact
+              .container
+                a.brand Qalculator
+                .nav-collapse
+                  //
+                     Other nav bar content 
+                  ul.nav
+                    ul.nav.navbar-nav
+                      li
+                        a(href='/qalcSelect')
+                          i.icon-home
+                          | Home
+                      li
+                        a(href='/myQalc')
+                          i.icon-th-large
+                          | My Qalculators
+                      li
+                        a(href='/offerF')
+                          i.icon-usd
+                          | My Offers
+                  ul.nav.navbar-nav.pull-right
+                    li
+                      a(href='/login')
+                        i.icon-off
+                        | Logout
+                    li
+                      a(href='/login')
+                        i.icon-wrench
+                        | Setting
+    br
+    br
+    br
