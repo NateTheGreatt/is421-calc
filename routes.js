@@ -6,7 +6,7 @@ module.exports = function(app){
     var passport = require('passport');
     var users = require('./controllers/users');
     var frontend = require('./controllers/frontend');
-    var requests = require('./requests');
+    var requests = require('./controllers/requests');
 
     app.get('/users/', users.list);
     app.get('/api/users', users.jsonlist);
@@ -38,4 +38,4 @@ module.exports = function(app){
          res.redirect('/login');
     }
 
-}
+};
