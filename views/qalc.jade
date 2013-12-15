@@ -76,40 +76,40 @@ html(lang='en')
                 h6.pull-right 320 characters remaining
                 button.btn.btn-info(type='submit') Add Comment
             .span6
-              form#billingform.form-horizontal(accept-charset='utf-8')
+              form#billingform.form-horizontal(accept-charset='utf-8', action='createQalc', method='POST')
                 .control-group
                   label.control-label Desired Loan Amount
                   .controls
-                    input(type='text', placeholder='$')
+                    input(type='text', placeholder='$' name='reqLoan')
                 .control-group
                   label.control-label(for='address') Loan Term
                   .controls
                     .span4
-                      select.input-block-level
+                      select.input-block-level(name='reqTermUnit')
                         option Months
                         option Years
                     .span3
-                      input.input-block-level(type='text')
+                      input.input-block-level(type='text' name='reqTerm')
                 .control-group
                   label.control-label Interest Rate
                   .controls
-                    input(type='text', placeholder='%')
+                    input(type='text', placeholder='%' name='reqInterestRate')
                 .control-group
                   label.control-label(for='city') Loan Start Date
                   .controls
                     .row-fluid
                       .span4
-                        select.input-block-level
+                        select.input-block-level(name='reqStartDateMonth')
                           option January
                           option ...
                           option December
                       .span3
-                        select.input-block-level
+                        select.input-block-level(name='reqStartDateDay')
                           option 1
                           option ...
                           option 31
                       .span4
-                        select.input-block-level
+                        select.input-block-level(name='reqStartDateYear')
                           option 2013
                           option ...
                           option 2015
