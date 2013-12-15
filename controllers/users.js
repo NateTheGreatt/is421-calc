@@ -29,7 +29,7 @@ exports.auth = function (req, res) {
    } else {
    req.flash('info', 'Flash is back!'); 
    userVal = req.user.username;
-   res.render('user', {
+   res.render('qalcSelect', {
       title: 'Welcome '+ userVal,
       id: 'id',
       username: User.username,

@@ -9,6 +9,11 @@ module.exports = function(app){
       app.get('/admin',ensureAuthenticated , admin.main);
     */
 
+	var index = require('./controllers/index');
+	var passport = require('passport');
+	var users = require('./controllers/users');
+	var admin = require('./controllers/admin');
+
     app.get('/', index.index);
     app.get('/qalcSelect', index.qalcSelect);
     app.get('/login', index.login);
@@ -22,7 +27,6 @@ module.exports = function(app){
       app.post('/users/remove', users.remove);
       app.post('/users/update/:uid', users.update);
       app.get('/login', users.login);
-    //  app.post('/login', passport.authenticate('local'), users.auth);
       app.post('/login', passport.authenticate('local', {failureRedirect: '/login'}), users.auth);
       app.get('/api', function (req,res) {
         var obj = {
@@ -31,12 +35,6 @@ module.exports = function(app){
         res.send(obj);
       });
 
-    /*function ensureAuthenticated(req, res, next) {
-      if (req.isAuthenticated()) { return next();}
-      else {res.redirect('/login')};
-         res.cookie('lasturl', req.path);
-         res.redirect('/login');
-    */
 
     function ensureAuthenticated(req, res, next) {
       if (req.isAuthenticated()) { return next(); }

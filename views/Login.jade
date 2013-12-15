@@ -1,47 +1,19 @@
-!!! 5
-html(lang='en')
-head
-    title Qalc Login
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    //
-       Bootstrap 
-    link(href='css/bootstrap.css', rel='stylesheet', media='screen')
-    //
-       FontAwesome 
-    link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css', rel='stylesheet')
-    //
-       CSS 
-    link(href='css/style.css', rel='stylesheet')
-    //
-       Social buttons 
-    link(href='css/social-buttons.css', rel='stylesheet')
-  body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          a.brand Qalculator
-          .nav-collapse
-            //
-               Other nav bar content 
-            //
-               The drop down menu 
-            ul.nav.pull-right
-              li.divider-vertical
-              li.dropdown
+extends layout
+block content
     .image(style='margin-top: 25px;')
-      img(border='0', src='img/QalculatorGuy.jpg', alt='Calculator', width='500', height='300')
+      img(border='0', src='/img/QalculatorGuy.jpg', alt='Calculator', width='500', height='300')
     .login(style='margin-top: 25px;')
       .row
         .span4.offset4
           .well
             legend Sign In to Qalculator
-            form(method='POST', action='', accept-charset='UTF-8')
+            form(method='POST', action='/login', accept-charset='UTF-8')
               input.span3(placeholder='E-mail', type='text', name='email')
               input.span3(placeholder='Password', type='password', name='password')
               label.checkbox
                 input(type='checkbox', name='remember', value='1')
                 | Remember Me
-              a.btn-primary.btn(href='/QalcSelect')  Sign In
+              input.btn-primary.btn(type="submit",value="Log In") Sign In
               p
               a(href='SignUp.html')  Forgot Password, Click Here!
               p
@@ -64,7 +36,7 @@ head
                 i.icon-google-plus
                 | | Connect with Google Plus
               br
-            a(href='SignUp.html')  Not a Member?, Then Click Here to Sign Up Man (LOL!!) 
+            a(href='/users')  Not a Member? Click Here to Sign Up
     .container
       .row-fluid
         .span12

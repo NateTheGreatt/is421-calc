@@ -14,7 +14,6 @@ var express = require('express')
 var app = express();
 var env = process.env.NODE_ENV || 'development';
 
-
 //Bootstrap db connection
 mongoose.connect('mongodb://localhost/qalc');
 require('./models/user');
@@ -59,7 +58,7 @@ app.configure('development', function(){
 });
 
 // Bootstrap routes
-require('./controllers/router')(app);
+require('./routes')(app);
 
 
 http.createServer(app).listen(app.get('port'), function(){
