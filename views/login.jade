@@ -8,32 +8,21 @@ block content
           .well
             legend Sign In to Qalculator
             form(method='POST', action='/login', accept-charset='UTF-8')
-              input.span3(placeholder='E-mail', type='text', name='email')
-              input.span3(placeholder='Password', type='password', name='password')
+              input.span3(placeholder='username', type='text', name='username')
+              input.span3(placeholder='password', type='password', name='password')
               label.checkbox
                 input(type='checkbox', name='remember', value='1')
                 | Remember Me
               input.btn-primary.btn(type="submit",value="Log In") Sign In
-              p
-              a(href='/signUp')  Forgot Password, Click Here!
-              p
-              button.btn.btn-facebook(style='clear: left; width: 100%; height: 32px; font-size: 13px; margin-bottom: 5px;')
-                i.icon-facebook
-                | | Connect with Facebook
-              button.btn.btn-twitter(style='clear: left; width: 100%; height: 32px; font-size: 13px; margin-bottom: 5px;')
-                i.icon-twitter
-                | | Connect with Twitter
-              br
-              button.btn.btn-github(style='clear: left; width: 100%; height: 32px; font-size: 13px; margin-bottom: 5px;')
-                i.icon-github
-                | | Connect with Github
-              br
-              button.btn.btn-linkedin(style='clear: left; width: 100%; height: 32px; font-size: 13px; margin-bottom: 5px;')
-                i.icon-linkedin
-                | | Connect with LinkedIn
-              br
-              button.btn.btn-google-plus(style='clear: left; width: 100%; height: 32px; font-size: 13px;')
-                i.icon-google-plus
-                | | Connect with Google Plus
-              br
-        a(href='/signUp')  Not a Member? Click Here to Sign Up
+            a(href='/users')  Not a Member?, Click here to Sign up 
+    .container
+      .row-fluid
+        .span12
+          .span8
+            a(href='#') Terms of Service
+            a(href='#') Privacy
+            a(href='#') Security
+          .span4
+            p.muted.pull-right © 2013 Qalculator App. All rights reserved
+    script(src='http://code.jquery.com/jquery.js')
+    script(src='js/bootstrap.min.js')

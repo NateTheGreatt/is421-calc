@@ -18,3 +18,7 @@
      exports.qalc = function(req, res) {
         res.render('qalc');
     };
+
+    exports.users = function(req,res) {
+        res.render('users');
+    };
