@@ -6,10 +6,7 @@ module.exports = function(app){
     var passport = require('passport');
     var users = require('./controllers/users');
     var frontend = require('./controllers/frontend');
-<<<<<<< HEAD
-=======
     var requests = require('./controllers/requests');
->>>>>>> 4ef4d79929af907f7b54f91df804be13b57e3045
 
     app.get('/users/', users.list);
     app.get('/api/users', users.jsonlist);
