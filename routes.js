@@ -4,17 +4,7 @@ module.exports = function(app){
     var passport = require('passport');
     var users = require('./controllers/users');
     var frontend = require('./controllers/frontend')
-//    var admin = require('./controllers/admin');
 
-    /* app.get('/', index.index);
-      app.get('/admin',ensureAuthenticated , admin.main);
-    */
-
-    app.get('/', index.index);
-    app.get('/qalcSelect', index.qalcSelect);
-    app.get('/login', index.login);
-    app.get('/myQalcs', index.myQalcs);
-    app.get('/offer/:id', index.getOffer);
 
     app.get('/users/', users.list);
     app.get('/api/users', users.jsonlist);
