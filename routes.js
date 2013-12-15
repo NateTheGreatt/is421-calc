@@ -16,21 +16,21 @@ module.exports = function(app){
     app.get('/myQalcs', index.myQalcs);
     app.get('/offer/:id', index.getOffer);
 
-      app.get('/users/', users.list);
-      app.get('/api/users', users.jsonlist);
-      app.get('/users/:uid', users.findById);
-      app.post('/users/add', users.add);
-      app.post('/users/remove', users.remove);
-      app.post('/users/update/:uid', users.update);
-      app.get('/login', users.login);
+    app.get('/users/', users.list);
+    app.get('/api/users', users.jsonlist);
+    app.get('/users/:uid', users.findById);
+    app.post('/users/add', users.add);
+    app.post('/users/remove', users.remove);
+    app.post('/users/update/:uid', users.update);
+    app.get('/login', users.login);
     //  app.post('/login', passport.authenticate('local'), users.auth);
-      app.post('/login', passport.authenticate('local', {failureRedirect: '/login'}), users.auth);
-      app.get('/api', function (req,res) {
+    app.post('/login', passport.authenticate('local', {failureRedirect: '/login'}), users.auth);
+    app.get('/api', function (req,res) {
         var obj = {
          spam: 'test'
         }
         res.send(obj);
-      });
+    });
    
    
     app.get('/qalcSelect', frontend.qalcSelect);
