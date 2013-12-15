@@ -3,7 +3,7 @@ module.exports = function(app){
     var index = require('./controllers/index');
     var passport = require('passport');
     var users = require('./controllers/users');
-    var frontend = require('./controllers/frontend')
+    var frontend = require('./controllers/frontend');
 
 
     app.get('/users/', users.list);
@@ -18,7 +18,7 @@ module.exports = function(app){
     app.get('/api', function (req,res) {
         var obj = {
          spam: 'test'
-        }
+        };
         res.send(obj);
     });
    
