@@ -12,7 +12,7 @@ exports.index = function(req, res) {
 };
 
 exports.qalcSelect = function(req, res) {
-    res.render('QalcSelect');
+    res.render('qalcSelect');
 };
 
 exports.login = function(req, res) {
@@ -20,7 +20,7 @@ exports.login = function(req, res) {
 };
 
 exports.myQalcs = function(req, res) {
-    res.render('MyQalc')
+    res.render('myQalc');
 };
 
 exports.getOffer = function(req, res) {

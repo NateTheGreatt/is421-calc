@@ -1,55 +1,5 @@
-!!! 5
-html(lang='en')
-head
-    title Welcome - The Qalculator App
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    //
-       Bootstrap 
-    link(href='css/bootstrap.css', rel='stylesheet', media='screen')
-    //
-       FontAwesome 
-    link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css', rel='stylesheet')
-    //
-       CSS 
-    link(href='css/style.css', rel='stylesheet')
-    link(href='./css/bootstrap-responsive.css', rel='stylesheet')
-    //
-       Social buttons 
-    link(href='css/social-buttons.css', rel='stylesheet')
-  body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          a.brand Qalculator
-          .nav-collapse
-            //
-               Other nav bar content 
-            ul.nav
-              ul.nav.navbar-nav
-                li
-                  a(href='/QalcSelect')
-                    i.icon-home
-                    | Home
-                li
-                  a(href='/MyQalc')
-                    i.icon-th-large
-                    | My Qalculators
-                li
-                  a(href='/offerF')
-                    i.icon-usd
-                    | My Offers
-            ul.nav.navbar-nav.pull-right
-              li
-                a(href='/login')
-                  i.icon-off
-                  | Logout
-              li
-                a(href='/login')
-                  i.icon-wrench
-                  | Setting
-    br
-    br
-    br
+extends layout
+block content
     .container
       .span9
         .btn-group
@@ -163,7 +113,7 @@ head
                     .span4
                       b $15,000
                       br
-                      small Quote
+                      small Quote 
                     .span4
                       b 6%
                       br
@@ -183,22 +133,4 @@ head
                       span.badge.badge-inverse 2
                     //
                        <button class="btn btn-info">Edit</button> 
-        //
-          /row
-      //
-        /span
-    //
-      /row
-    //
-      /body
-    .container
-      .row-fluid
-        .span12
-          .span8
-            a(href='#') Terms of Service
-            a(href='#') Privacy
-            a(href='#') Security
-          .span4
-            p.muted.pull-right © 2013 Calculator App. All rights reserved
-    script(src='./js/jquery.js')
-    script(src='./js/bootstrap.js')
+      
