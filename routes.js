@@ -3,8 +3,7 @@ module.exports = function(app){
     var index = require('./controllers/index');
     var passport = require('passport');
     var users = require('./controllers/users');
-    var frontend = require('./controllers/frontend')
-
+    var frontend = require('./controllers/frontend');
 
     app.get('/users/', users.list);
     app.get('/api/users', users.jsonlist);
@@ -12,7 +11,7 @@ module.exports = function(app){
     app.post('/users/add', users.add);
     app.post('/users/remove', users.remove);
     app.post('/users/update/:uid', users.update);
-    app.get('/login', users.login);
+    app.get('/', users.login);
     //  app.post('/login', passport.authenticate('local'), users.auth);
     app.post('/login', passport.authenticate('local', {failureRedirect: '/login'}), users.auth);
     app.get('/api', function (req,res) {
