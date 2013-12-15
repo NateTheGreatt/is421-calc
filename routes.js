@@ -1,9 +1,15 @@
 module.exports = function(app){
-
+	
+	/*Controllers setup
+     * */
     var index = require('./controllers/index');
     var passport = require('passport');
     var users = require('./controllers/users');
     var frontend = require('./controllers/frontend');
+<<<<<<< HEAD
+=======
+    var requests = require('./controllers/requests');
+>>>>>>> 4ef4d79929af907f7b54f91df804be13b57e3045
 
     app.get('/users/', users.list);
     app.get('/api/users', users.jsonlist);
@@ -17,7 +23,7 @@ module.exports = function(app){
     app.get('/api', function (req,res) {
         var obj = {
          spam: 'test'
-        }
+        };
         res.send(obj);
     });
    
@@ -27,6 +33,7 @@ module.exports = function(app){
     app.get('/myQalc', frontend.myQalc);
     app.get('/offerF', frontend.offerF);
     app.get('/qalc', frontend.qalc);
+    app.post('/createQalc', requests.addLoanRequest);
 
     function ensureAuthenticated(req, res, next) {
       if (req.isAuthenticated()) { return next(); }
@@ -34,4 +41,4 @@ module.exports = function(app){
          res.redirect('/login');
     }
 
-}
+};
