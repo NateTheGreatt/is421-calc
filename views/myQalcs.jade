@@ -1,0 +1,42 @@
+extends layout
+block content
+    .container
+      .span9
+        .btn-group
+          button.btn.active All
+          button.btn Saved
+          button.btn Offers
+          button.btn Pending
+      .span9
+        .row-fluid
+          ul.thumbnails
+              -each qalc in qalcs
+                li.span3
+                  .thumbnail(style='padding: 0;')
+                    div(style='padding: 4px;')
+                      img(alt='300x200', style='width: 100%;', src='img/13.jpg')
+                    .caption
+                      h2 #{qalc.name}
+                      p #{qalc.description}
+                    .modal-footer
+                      .row-fluid
+                        .span4
+                          b #{qalc.quote}
+                          br
+                          small Quote
+                        .span4
+                          b #{qalc.interest}
+                          br
+                          small Interest
+                        .span4
+                          b #{qalc.months}
+                          br
+                          small Months
+                        .span12(style='text-align: center;')
+                          h3
+                            | #{qalc.monthly}
+                            small /mo
+                    .modal-footer(style='text-align: center;')
+                      .btn-group
+                        button.btn.btn-success Send
+                        button.btn.btn-info Edit

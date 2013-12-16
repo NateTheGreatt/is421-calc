@@ -20,7 +20,12 @@ exports.login = function(req, res) {
 };
 
 exports.myQalcs = function(req, res) {
-    res.render('myQalc');
+    var o = {qalcs: [
+        {name: "Qalc A", description: "fake desc", quote: 15000, interest: 0.6, months: 48, monthly: 352.28},
+        {name: "Qalc B", description: "fake desc", quote: 1000, interest: 0.52, months: 24, monthly: 552.28},
+        {name: "Qalc C", description: "fake desc", quote: 5000, interest: 0.49, months: 32, monthly: 452.28}
+    ]};
+    res.render('myQalcs', o);
 };
 
 exports.getOffer = function(req, res) {

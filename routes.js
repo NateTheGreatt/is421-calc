@@ -5,7 +5,6 @@ module.exports = function(app){
     var index = require('./controllers/index');
     var passport = require('passport');
     var users = require('./controllers/users');
-    var frontend = require('./controllers/frontend');
     var requests = require('./controllers/requests');
 
     app.get('/users/', users.list);
@@ -23,15 +22,17 @@ module.exports = function(app){
         };
         res.send(obj);
     });
+
+    app.get('/myQalcs', index.myQalcs);
    
    
-    app.get('/qalcSelect', frontend.qalcSelect);
+    /*app.get('/qalcSelect', frontend.qalcSelect);
     app.get('/login', frontend.login);
     app.get('/myQalc', frontend.myQalc);
     app.get('/offerF', frontend.offerF);
     app.get('/qalc', frontend.qalc);
     app.get('/users', frontend.users);
-    app.post('/createQalc', requests.addLoanRequest);
+    app.post('/createQalc', requests.addLoanRequest);*/
 
     function ensureAuthenticated(req, res, next) {
       if (req.isAuthenticated()) { return next(); }
