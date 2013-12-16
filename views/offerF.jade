@@ -24,146 +24,60 @@ block content
                     th Interest Rate
                     th Amount
                     th.sorttable_nosort Status
-                tr
-                  td Chase
-                  td 6
-                  td 9876541
-                  td
-                    button.btn.btn-primary Accept
-                    button.btn.btn-danger Reject
-                tr
-                  td Wells fargo
-                  td 9
-                  td 1238
-                  td
-                    button.btn.btn-primary Accept
-                    button.btn.btn-danger Reject
-                tr
-                  td BOA
-                  td 8
-                  td 987356
-                  td
-                    button.btn.btn-primary Accept
-                    button.btn.btn-danger Reject
-                tr
-                  td Discover
-                  td 10
-                  td 20000
-                  td
-                    button.btn.btn-primary Accept
-                    button.btn.btn-danger Reject
-                tr
-                  td HSBC
-                  td 15
-                  td 100000
-                  td
-                    button.btn.btn-primary Accept
-                    button.btn.btn-danger Reject
+                    -each qalc in qalcs
+                        tr
+                          td #{offer.company}
+                          td #{offer.interest}
+                          td #{offer.amount}
+                          td
+                            button.btn.btn-primary Accept
+                            button.btn.btn-danger Reject
+                
                   
           #pane2.tab-pane
             .span9
             .span9
               .row-fluid
                 ul.thumbnails
-                  li.span3
-                    .thumbnail(style='padding: 0;')
-                      div(style='padding: 4px;')
-                        img(alt='300x200', style='width: 100%;', src='img/Acura.jpg')
-                      .caption
-                        h2 Offer A
-                        p Car description
-                        p
-                          i.icon.icon-map-marker
-                          | City, State
-                      .modal-footer
-                        .row-fluid
-                          .span4
-                            b $15,000
-                            br
-                            small Quote
-                          .span4
-                            b 6%
-                            br
-                            small Interest
-                          .span4
-                            b 48
-                            br
-                            small Months
-                          .span12(style='text-align: center;')
-                            h3
-                              | $352.28
-                              small /mo
-                      .modal-footer(style='text-align: center;')
-                        .btn-group
-                          button.btn.btn-primary(disabled='disabled') Accepted
-                  li.span3
-                    .thumbnail(style='padding: 0;')
-                      div(style='padding: 4px;')
-                        img(alt='300x200', style='width: 100%;', src='img/Toyota.jpg')
-                      .caption
-                        h2 Offer B
-                        p Car description
-                        p
-                          i.icon.icon-map-marker
-                          | City, State
-                      .modal-footer
-                        .row-fluid
-                          .span4
-                            b $15,000
-                            br
-                            small Quote
-                          .span4
-                            b 6%
-                            br
-                            small Interest
-                          .span4
-                            b 48
-                            br
-                            small Months
-                          .span12(style='text-align: center;')
-                            h3
-                              | $352.28
-                              small /mo
-                      .modal-footer(style='text-align: center;')
-                        .btn-group
-                          button.btn.btn-danger(disabled='disabled') Rejected
-                  li.span3
-                    .thumbnail(style='padding: 0;')
-                      div(style='padding: 4px;')
-                        img(alt='300x200', style='width: 100%;', src='img/Honda.jpg')
-                      .caption
-                        h2 Offer C
-                        p Car description
-                        p
-                          i.icon.icon-map-marker
-                          | City, State
-                      .modal-footer
-                        .row-fluid
-                          .span4
-                            b $15,000
-                            br
-                            small Quote
-                          .span4
-                            b 6%
-                            br
-                            small Interest
-                          .span4
-                            b 48
-                            br
-                            small Months
-                          .span12(style='text-align: center;')
-                            h3
-                              | $352.28
-                              small /mo
-                      .modal-footer(style='text-align: center;')
-                        .btn-group
-                          button.btn.btn-primary(disabled='disabled') Accepted
+                    -each qalc in qalcs
+                        li.span3
+                          .thumbnail(style='padding: 0;')
+                            div(style='padding: 4px;')
+                              img(alt='300x200', style='width: 100%;', src='img/Acura.jpg')
+                            .caption
+                              h2 #{qalc.name}
+                              p #{qalc.description}
+                              p
+                                i.icon.icon-map-marker
+                                | City, State
+                            .modal-footer
+                              .row-fluid
+                                .span4
+                                  b #{qalc.quote}
+                                  br
+                                  small Quote
+                                .span4
+                                  b #{qalc.interest}
+                                  br
+                                  small Interest
+                                .span4
+                                  b #{qalc.months}
+                                  br
+                                  small Months
+                                .span12(style='text-align: center;')
+                                  h3
+                                    | #{qalc.monthly}
+                                    small /mo
+                          
+                            .modal-footer(style='text-align: center;')
+                              .btn-group
+                                button.btn.btn-primary(disabled='disabled') Accepted
+                    //
+                      /row
+                  //
+                    /span
               //
-                /row
-            //
-              /span
-        //
-           /.tab-content 
+                 /.tab-content 
 
    
     script(src='./js/jquery.js')
