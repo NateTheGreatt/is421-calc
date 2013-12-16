@@ -1,0 +1,39 @@
+extends layout
+block content
+    .container
+      .tabbable
+        ul.nav.nav-tabs
+         
+          li
+            a(href='#pane2', data-toggle='tab')
+              i.icon-th-list
+              | Quotes
+          li
+            a(href='#pane3', data-toggle='tab')
+              i.icon-th
+              | Grid View
+      .tab-content
+        .tab-content
+            form.form-horizontal
+                fieldset
+                    //
+                       Form Name 
+                    legend Offer Form
+                    //
+                       Text input
+                    .control-group
+                      label.control-label(for='Offer') Offer
+                      .controls
+                        input#Offer.input-medium(name='Offer', type='text', placeholder='$ offer', required='')
+                    //
+                       Text input
+                    .control-group
+                      label.control-label(for='Bank') Bank
+                      .controls
+                        input#Bank.input-large(name='Bank', type='text', placeholder='Bank name', required='')
+                    //
+                       Textarea 
+                    .control-group
+                      label.control-label(for='Comment') Comment
+                      .controls
+                        textarea#Comment(name='Comment') Comment
