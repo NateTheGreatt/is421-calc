@@ -5,12 +5,15 @@
 var mongoose = require('mongoose'), 
 	Request = mongoose.model('Request'),
 	LoanRequest = mongoose.model('LoanRequest'),
-	LoanResponse = mongoose.model('LoanResponse');
+	LoanResponse = mongoose.model('LoanResponse'),
+	CommonRequest = mongoose.model('CommonRequest');
 
 // Insert or update a request
 exports.addLoanRequest = function(req, res) {
 	var data = req.body;
 
+	console.log(data);
+	
 	var loanObj = new LoanRequest({
 		reqLoan : data.reqLoan,
 		reqTerm : data.reqTerm,
@@ -21,8 +24,13 @@ exports.addLoanRequest = function(req, res) {
 		reqStartDateDay : data.reqStartDateDay
 	});
 
-	
-	
+	var commonObj = new CommonRequest({
+		
+		image : data.image,	//TODO placeholder
+		audio : data.audio,	//TODO placeholder
+		comment : data.comment
+	});
+
 	Request.update({
 		userId : "chico",	// TODO dynamically assign user
 		calcType : "loan"
@@ -30,13 +38,14 @@ exports.addLoanRequest = function(req, res) {
 	{
 		status : "draft",	// TODO status field - define constants. draft, submitted, reviewed
 		calcType : "loan",	// TODO calcType field - define constants. lease, loan...
-		req_obj : loanObj.toObject()
+		req_obj : loanObj.toObject(),
+		common : commonObj.toObject()
 	}, {
 		safe : true,
 		upsert : true
 	},	resultLogCallback);
 	
-	res.render('../views/qalc');
+	res.render('../views/qalc');	//TODO replace with dynamic reference
 };
 
 // Insert or update a new response for a request
@@ -68,7 +77,7 @@ exports.addLoanResponse = function(req, res) {
 		upsert : true
 	}, resultLogCallback);
 	
-	res.render('../views/bankOffer');
+	res.render('../views/bankOffer');	//TODO replace with dynamic reference
 };
 
 function resultLogCallback(err, numberAffected, raw) {
