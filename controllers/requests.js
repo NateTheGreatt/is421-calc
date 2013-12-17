@@ -43,7 +43,7 @@ exports.addLoanRequest = function(req, res) {
 exports.addLoanResponse = function(req, res) {
 	var data = req.body;
 
-	var loanObj = new LoanRequest({
+	var loanObj = new LoanResponse({
 		msrp : data.msrp,
 		downPayment : data.downPayment,
 		tradeInValue : data.tradeInValue,
@@ -68,7 +68,7 @@ exports.addLoanResponse = function(req, res) {
 		upsert : true
 	}, resultLogCallback);
 	
-	res.render('../views/qalc');
+	res.render(req.path);
 };
 
 function resultLogCallback(err, numberAffected, raw) {
