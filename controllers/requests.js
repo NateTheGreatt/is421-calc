@@ -90,7 +90,7 @@ exports.getCalcs = function(req, res) {
         	userId : "chico",	// TODO dynamically assign user
         	calcType : "loan"},	
         	"calcType req_obj common",
-        	populateCalc)};
+        	populateCalc);
 
 };
 
