@@ -32,7 +32,8 @@ module.exports = function(app){
     app.get('/offerF', frontend.offerF);
     app.get('/qalc', frontend.qalc);
     app.get('/users', frontend.users);
-    app.post('/createQalc', requests.addLoanRequest);*/
+    app.post('/createQalc', requests.addLoanRequest);
+    app.get('/bankOffer', frontend.bankOffer);*/
 
     function ensureAuthenticated(req, res, next) {
       if (req.isAuthenticated()) { return next(); }
