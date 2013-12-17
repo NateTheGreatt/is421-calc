@@ -8,7 +8,8 @@ var RequestSchema = new Schema({
   status: String,
   calcType: String,
   req_obj: Schema.Types.Mixed,
-  resp_obj: []
+  resp_obj: [],
+  common: {}//{type: Schema.Types.ObjectId, ref: 'CommonRequest'} //TODO correct Mongoose: Cast to ObjectId failed for value when updating with this object type
 });
 
 mongoose.model('Request', RequestSchema);

@@ -22,6 +22,7 @@ require('./models/loanRequest');
 require('./models/leaseResponse');
 require('./models/loanResponse');
 require('./models/request');
+require('./models/commonRequest');
 
 app.use(flash());
 var User = mongoose.model("User");
