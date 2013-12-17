@@ -15,17 +15,19 @@ exports.addLoanRequest = function(req, res) {
 	console.log(data);
 	
 	var loanObj = new LoanRequest({
-		reqLoan : data.reqLoan,
-		reqTerm : data.reqTerm,
-		reqTermUnit : data.reqTermUnit,
-		reqInterestRate : data.reqInterestRate,
-		reqStartDateYear : data.reqStartDateYear,
-		reqStartDateMonth : data.reqStartDateMonth,
-		reqStartDateDay : data.reqStartDateDay
+		reqLoan : data.loan,
+		reqTerm : data.term,
+		reqTermUnit : data.termUnit,
+		reqInterestRate : data.snterestRate,
+		reqStartDateYear : data.startDateYear,
+		reqStartDateMonth : data.startDateMonth,
+		reqStartDateDay : data.startDateDay
 	});
 
 	var commonObj = new CommonRequest({
 		
+		name : data.name,	//TODO placeholder
+		description : data.description,	//TODO placeholder
 		image : data.image,	//TODO placeholder
 		audio : data.audio,	//TODO placeholder
 		comment : data.comment
@@ -80,6 +82,55 @@ exports.addLoanResponse = function(req, res) {
 	res.render('../views/bankOffer');	//TODO replace with dynamic reference
 };
 
+// Insert or update a new response for a request
+exports.getCalcs = function(req, res) {
+
+        
+        Request.findOne({
+        	userId : "chico",	// TODO dynamically assign user
+        	calcType : "loan"},	
+        	"calcType req_obj common",
+        	populateCalc);
+
+	res.render(req.path);
+};
+
+//Populate object for return to myCalcs page. Assumes loan based on page constraints!
+function populateCalc(err, request){
+	var calc = {
+		name : request.common.name,
+		description : request.common.description,
+		quote : request.req_obj.loan,
+		interest : req_obj.interestRate,
+		term : request.req_obj.term,
+		termUnit : request.req_obj.termUnit,
+		monthly : getPayment(request.req_obj.loan, request.term, request.rate, request.termUnit)
+	};
+	
+	
+}
+
+
+/*Throw away function. Created to output sample data in requested format*/
+function getPayment(loan, term, rate, termUnit) {
+
+ var princ = loan;
+ var term  = convertTerm(term, termUnit);
+ var intr   = rate / 1200;
+ 
+ return princ * intr / (1 - (Math.pow(1/(1 + intr), term)));
+}
+
+/*Throw away function. Created to output sample data in requested format*/
+function convertTerm(term, termUnit){
+
+	switch(termUnit){
+		case "months":
+			return term;
+		case "years":
+			return term * 12;
+	}
+}
 function resultLogCallback(err, numberAffected, raw) {
 
 	if (err)
