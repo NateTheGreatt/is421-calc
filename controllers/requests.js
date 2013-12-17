@@ -26,6 +26,8 @@ exports.addLoanRequest = function(req, res) {
 
 	var commonObj = new CommonRequest({
 		
+		name : data.name,	//TODO placeholder
+		description : data.description,	//TODO placeholder
 		image : data.image,	//TODO placeholder
 		audio : data.audio,	//TODO placeholder
 		comment : data.comment
