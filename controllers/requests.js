@@ -15,13 +15,13 @@ exports.addLoanRequest = function(req, res) {
 	console.log(data);
 	
 	var loanObj = new LoanRequest({
-		reqLoan : data.reqLoan,
-		reqTerm : data.reqTerm,
-		reqTermUnit : data.reqTermUnit,
-		reqInterestRate : data.reqInterestRate,
-		reqStartDateYear : data.reqStartDateYear,
-		reqStartDateMonth : data.reqStartDateMonth,
-		reqStartDateDay : data.reqStartDateDay
+		reqLoan : data.loan,
+		reqTerm : data.term,
+		reqTermUnit : data.termUnit,
+		reqInterestRate : data.snterestRate,
+		reqStartDateYear : data.startDateYear,
+		reqStartDateMonth : data.startDateMonth,
+		reqStartDateDay : data.startDateDay
 	});
 
 	var commonObj = new CommonRequest({
@@ -99,11 +99,11 @@ function populateCalc(err, request){
 	var calc = {
 		name : request.common.name,
 		description : request.common.description,
-		quote : request.req_obj.reqLoan,
-		interest : req_obj.reqInterestRate,
+		quote : request.req_obj.loan,
+		interest : req_obj.interestRate,
 		term : request.req_obj.term,
 		termUnit : request.req_obj.termUnit,
-		monthly : getPayment(request.req_obj.reqLoan, request.term, request.rate, request.termUnit)
+		monthly : getPayment(request.req_obj.loan, request.term, request.rate, request.termUnit)
 	};
 	
 	
