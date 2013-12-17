@@ -92,6 +92,7 @@ exports.getCalcs = function(req, res) {
         	"calcType req_obj common",
         	populateCalc);
 
+	res.render(req.path);
 };
 
 //Populate object for return to myCalcs page. Assumes loan based on page constraints!
