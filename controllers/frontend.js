@@ -1,5 +1,4 @@
 
-
     exports.login = function(req, res) {
         res.render('login');
     };
@@ -21,4 +20,7 @@
 
     exports.users = function(req,res) {
         res.render('users');
+    };
+    exports.bankOffer = function(req,res) {
+        res.render('bankOffer');
     };
