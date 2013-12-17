@@ -48,7 +48,7 @@ exports.addLoanRequest = function(req, res) {
 	res.render('../views/qalc');	//TODO replace with dynamic reference
 };
 
-// Insert or update a new response for a request
+// Insert or update a new response for a response
 exports.addLoanResponse = function(req, res) {
 	var data = req.body;
 
