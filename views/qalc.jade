@@ -71,8 +71,8 @@ html(lang='en')
                 button.btn(type='button') Upload
               hr
               h4 Add a Comment
-              form(accept-charset='UTF-8', action='', method='POST')
-                textarea#new_message.span12(name='new_message', placeholder='Type in your message', rows='5')
+              form(accept-charset='UTF-8', action='createQalc', method='POST')
+                textarea#new_message.span12(name='new_message', placeholder='Type in your message', rows='5',  name='comment')
                 h6.pull-right 320 characters remaining
                 button.btn.btn-info(type='submit') Add Comment
             .span6
@@ -80,7 +80,7 @@ html(lang='en')
                 .control-group
                   label.control-label Desired Loan Amount
                   .controls
-                    input(type='text', placeholder='$' name='reqLoan')
+                    input(type='text' placeholder='$' name='reqLoan')
                 .control-group
                   label.control-label(for='address') Loan Term
                   .controls
