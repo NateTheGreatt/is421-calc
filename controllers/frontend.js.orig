@@ -21,7 +21,9 @@
     exports.users = function(req,res) {
         res.render('users');
     };
-
+<<<<<<< HEAD
+=======
     exports.bankOffer = function(req,res) {
         res.render('bankOffer');
     };
+>>>>>>> d6121eceed030e2e29cb65cc5cb316489e79b7cd
