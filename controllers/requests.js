@@ -99,7 +99,7 @@ function populateCalc(err, request){
 	var calc = {
 		name : request.common.name,
 		description : request.common.description,
-		quote : getQuoteField(request.calcType, request.req_obj),
+		quote : request.req_obj.reqLoan,
 		interest : req_obj.reqInterestRate,
 		term : request.req_obj.term,
 		termUnit : request.req_obj.termUnit,
@@ -109,17 +109,6 @@ function populateCalc(err, request){
 	
 }
 
-
-/*Throw away function. Created to output sample data in requested format*/
-function convertTerm(term, termUnit){
-
-	switch(termUnit){
-		case "months":
-			return term;
-		case "years":
-			return term * 12;
-	}
-}
 
 /*Throw away function. Created to output sample data in requested format*/
 function getPayment(loan, term, rate, termUnit) {
