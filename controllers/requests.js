@@ -82,6 +82,65 @@ exports.addLoanResponse = function(req, res) {
 	res.render('../views/bankOffer');	//TODO replace with dynamic reference
 };
 
+// Insert or update a new response for a request
+exports.getCalcs = function(req, res) {
+
+        
+        Request.findOne({
+        	userId : "chico",	// TODO dynamically assign user
+        	calcType : "loan"},	
+        	"calcType req_obj common",
+        	populateCalc)};
+
+};
+
+//Populate object for return to myCalcs page. Assumes loan based on page constraints!
+function populateCalc(err, request){
+	var calc = {
+		name : request.common.name,
+		description : request.common.description,
+		quote : getQuoteField(request.calcType, request.req_obj),
+		interest : req_obj.reqInterestRate,
+		term : request.req_obj.term,
+		termUnit : request.req_obj.termUnit,
+		monthly : getPayment(request.req_obj.reqLoan, request.term, request.rate, request.termUnit)
+	};
+	
+	
+}
+
+
+/*Throw away function. Created to output sample data in requested format*/
+function convertTerm(term, termUnit){
+
+	switch(termUnit){
+		case "months":
+			return term;
+		case "years":
+			return term * 12;
+	}
+}
+
+/*Throw away function. Created to output sample data in requested format*/
+function getPayment(loan, term, rate, termUnit) {
+
+ var princ = loan;
+ var term  = convertTerm(term, termUnit);
+ var intr   = rate / 1200;
+ 
+ return princ * intr / (1 - (Math.pow(1/(1 + intr), term)));
+}
+
+/*Throw away function. Created to output sample data in requested format*/
+function convertTerm(term, termUnit){
+
+	switch(termUnit){
+		case "months":
+			return term;
+		case "years":
+			return term * 12;
+	}
+}
 function resultLogCallback(err, numberAffected, raw) {
 
 	if (err)
