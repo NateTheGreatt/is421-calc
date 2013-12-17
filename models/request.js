@@ -8,7 +8,8 @@ var RequestSchema = new Schema({
   status: String,
   calcType: String,
   req_obj: Schema.Types.Mixed,
-  resp_obj: []
+  resp_obj: [],
+  common: {type: Schema.Types.ObjectId, ref: 'CommonRequest'}
 });
 
 mongoose.model('Request', RequestSchema);
