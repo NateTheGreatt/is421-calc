@@ -6,15 +6,14 @@ block content
       .row
         .span4.offset4
           .well
-            legend Sign In to Qalculator
-            form(method='POST', action='/login', accept-charset='UTF-8')
+            legend Create an Account
+            form(method='POST', action='/users/add', accept-charset='UTF-8')
               input.span3(placeholder='username', type='text', name='username')
               input.span3(placeholder='password', type='password', name='password')
               label.checkbox
                 input(type='checkbox', name='remember', value='1')
                 | Remember Me
-              input.btn-primary.btn(type="submit",value="Log In") Sign In
-            a(href='/users')  Not a Member?, Click here to Sign up 
+              input.btn-primary.btn(type="submit",value="Save") Save
     .container
       .row-fluid
         .span12
