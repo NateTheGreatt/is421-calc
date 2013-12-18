@@ -47,8 +47,9 @@ html(lang='en')
     br
     .container
       .tab-content
-        .span9
-          .row-fluid
+        form(accept-charset='UTF-8', action='createQalc', method='POST')
+          .span9
+           .row-fluid
             .span6
               h4 Add a Picture
               img(src='http://placehold.it/400x250&text=click+to+add+a+picture', style='margin-bottom: 5px;')
@@ -71,45 +72,44 @@ html(lang='en')
                 button.btn(type='button') Upload
               hr
               h4 Add a Comment
-              form(accept-charset='UTF-8', action='', method='POST')
-                textarea#new_message.span12(name='new_message', placeholder='Type in your message', rows='5')
-                h6.pull-right 320 characters remaining
-                button.btn.btn-info(type='submit') Add Comment
+              textarea#new_message.span12(name='new_message', placeholder='Type in your message', rows='5',  name='comment', value='#{request.common.comment[0]}')
+              h6.pull-right 320 characters remaining
+              button.btn.btn-info(type='submit') Add Comment
             .span6
-              form#billingform.form-horizontal(accept-charset='utf-8', action='createQalc', method='POST')
+              div#billingform.form-horizontal
                 .control-group
                   label.control-label Desired Loan Amount
                   .controls
-                    input(type='text', placeholder='$' name='reqLoan')
+                    input(type='text' placeholder='$' name='loan' value='#{request.req_obj.loan}')
                 .control-group
                   label.control-label(for='address') Loan Term
                   .controls
                     .span4
-                      select.input-block-level(name='reqTermUnit')
+                      select.input-block-level(name='termUnit' value='#{request.req_obj.termUnit}')
                         option Months
                         option Years
                     .span3
-                      input.input-block-level(type='text' name='reqTerm')
+                      input.input-block-level(type='text' name='term' value='#{request.req_obj.term}')
                 .control-group
                   label.control-label Interest Rate
                   .controls
-                    input(type='text', placeholder='%' name='reqInterestRate')
+                    input(type='text', placeholder='%' name='interestRate' value='#{request.req_obj.interestRate}')
                 .control-group
                   label.control-label(for='city') Loan Start Date
                   .controls
                     .row-fluid
                       .span4
-                        select.input-block-level(name='reqStartDateMonth')
+                        select.input-block-level(name='startDateMonth' value='#{request.req_obj.startDateMonth}')
                           option January
                           option ...
                           option December
                       .span3
-                        select.input-block-level(name='reqStartDateDay')
+                        select.input-block-level(name='startDateDay' value='#{request.req_obj.startDateDay}')
                           option 1
                           option ...
                           option 31
                       .span4
-                        select.input-block-level(name='reqStartDateYear')
+                        select.input-block-level(name='startDateYear' value='#{request.req_obj.startDateYear}')
                           option 2013
                           option ...
                           option 2015

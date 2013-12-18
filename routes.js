@@ -15,7 +15,6 @@ module.exports = function(app){
     app.get('/qalcSelect', index.qalcSelect);
     app.get('/login', index.login); app.get('/myQalcs', index.myQalcs);
     app.get('/offers', index.offers);
-    app.get('/offers', index.offers);
     app.get('/bankOffer', index.bankOffer);
 
     app.post('/login', passport.authenticate('local', {failureRedirect: '/login'}), users.auth);
@@ -27,6 +26,11 @@ module.exports = function(app){
         };
         res.send(obj);
     });
+
+     //app.get('/myQalcs', index.myQalcs);
+    app.get('/myQalcs', requests.getCalcs);
+   	app.get('/qalc', requests.getLoanCalc);
+   	app.post('/createQalc', requests.addLoanRequest);
 
     /*app.get('/qalcSelect', frontend.qalcSelect);
     app.get('/login', frontend.login);
