@@ -13,17 +13,25 @@ var express = require('express')
 
 var app = express();
 var env = process.env.NODE_ENV || 'development';
-var config = require('./config/config')[env];
+
 //Bootstrap db connection
-mongoose.connect('mongodb://localhost/learning');
+mongoose.connect('mongodb://localhost/qalc');
 require('./models/user');
+require('./models/leaseRequest');
+require('./models/loanRequest');
+require('./models/leaseResponse');
+require('./models/loanResponse');
+require('./models/request');
+require('./models/commonRequest');
+
 app.use(flash());
 var User = mongoose.model("User");
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
 app.configure(function(){
-  app.set('port', process.env.PORT || 3002);
+  app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.set('title', 'Qalc');
