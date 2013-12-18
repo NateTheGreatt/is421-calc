@@ -4,8 +4,8 @@ var mongoose = require('mongoose')
 /* Basic schema to store items common to all requests */
 
 var CommonRequestSchema = new Schema({
-  name: String,
-  description: String,
+  name: {type: String, "default": ""},
+  description: {type: String, "default": ""},
   image: {},
   audio: {},
   comment: []
