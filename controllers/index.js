@@ -19,6 +19,9 @@ exports.login = function(req, res) {
     res.render('login');
 };
 
+exports.bankOffer = function(req, res) {
+    res.render('bankOffer');
+};
 exports.myQalcs = function(req, res) {
     var qalcs = {qalcs: [
         {name: "Qalc A", description: "fake desc", quote: 15000, interest: 0.6, months: 48, monthly: 352.28},
