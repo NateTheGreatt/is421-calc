@@ -2,51 +2,14 @@ extends layout
 
 block content
     .row-fluid
-        .span3
-            .well.sidebar-nav
-                .btn-group.qalc-select
-                    a.btn.dropdown-toggle(data-toggle='dropdown', href='#')
-                        | Qalc Type
-                        span.caret
-                    ul.dropdown-menu
-                        li
-                            a(href='#') Cars
-                        li
-                            a(href='#') Real Estate
-                        li
-                            a(href='#') Etc
-                ul.nav.nav-list
-                    li.nav-header Car Qalcs
-                    li.active
-                        a(href='/offers')
-                            i.icon-inbox
-                            | Offers
-                            span.badge.badge-inverse 3
-                    li
-                        a(href='/myqalcs')
-                            i.icon-th
-                            | My Qalcs
-                    li
-                        a(href='/createqalc')
-                            i.icon-plus
-                            | Create Qalc
-                    li.divider
-                    li
-                        a(href='#')
-                            i.icon-wrench
-                            | Settings
-                    li
-                        a(href='#')
-                            i.icon-off
-                            | Logout
-        .span9
+        .span12
             .btn-group
                 button.btn.active All
                 button.btn New
                 button.btn Viewed
                 button.btn Accepted
                 button.btn Rejected
-        .span9
+        .span12
             .row-fluid
                 ul.thumbnails
                     li.span3

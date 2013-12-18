@@ -27,16 +27,16 @@ exports.auth = function (req, res) {
      res.redirect('login');
      res.clearCookie('lasturl');
    } else {
-   req.flash('info', 'Flash is back!'); 
-   userVal = req.user.username;
-   res.render('qalcSelect', {
-      title: 'Welcome '+ userVal,
-      id: 'id',
-      username: User.username,
-      password: 'password',
-      messages: req.flash('info') 
-  });
-    }
+       req.flash('info', 'Flash is back!');
+       userVal = req.user.username;
+       res.render('qalcSelect', {
+          title: 'Welcome '+ userVal,
+          id: 'id',
+          username: User.username,
+          password: 'password',
+          messages: req.flash('info')
+      });
+  }
 }
 exports.login = function (req, res) {
   res.render('login', {
