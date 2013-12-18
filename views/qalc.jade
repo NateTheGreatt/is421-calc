@@ -80,36 +80,36 @@ html(lang='en')
                 .control-group
                   label.control-label Desired Loan Amount
                   .controls
-                    input(type='text' placeholder='$' name='reqLoan')
+                    input(type='text' placeholder='$' name='loan')
                 .control-group
                   label.control-label(for='address') Loan Term
                   .controls
                     .span4
-                      select.input-block-level(name='reqTermUnit')
+                      select.input-block-level(name='termUnit')
                         option Months
                         option Years
                     .span3
-                      input.input-block-level(type='text' name='reqTerm')
+                      input.input-block-level(type='text' name='term')
                 .control-group
                   label.control-label Interest Rate
                   .controls
-                    input(type='text', placeholder='%' name='reqInterestRate')
+                    input(type='text', placeholder='%' name='interestRate')
                 .control-group
                   label.control-label(for='city') Loan Start Date
                   .controls
                     .row-fluid
                       .span4
-                        select.input-block-level(name='reqStartDateMonth')
+                        select.input-block-level(name='startDateMonth')
                           option January
                           option ...
                           option December
                       .span3
-                        select.input-block-level(name='reqStartDateDay')
+                        select.input-block-level(name='startDateDay')
                           option 1
                           option ...
                           option 31
                       .span4
-                        select.input-block-level(name='reqStartDateYear')
+                        select.input-block-level(name='startDateYear')
                           option 2013
                           option ...
                           option 2015
