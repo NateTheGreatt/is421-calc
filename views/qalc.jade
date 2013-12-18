@@ -47,8 +47,9 @@ html(lang='en')
     br
     .container
       .tab-content
-        .span9
-          .row-fluid
+        form(accept-charset='UTF-8', action='createQalc', method='POST')
+          .span9
+           .row-fluid
             .span6
               h4 Add a Picture
               img(src='http://placehold.it/400x250&text=click+to+add+a+picture', style='margin-bottom: 5px;')
@@ -71,12 +72,11 @@ html(lang='en')
                 button.btn(type='button') Upload
               hr
               h4 Add a Comment
-              form(accept-charset='UTF-8', action='createQalc', method='POST')
-                textarea#new_message.span12(name='new_message', placeholder='Type in your message', rows='5',  name='comment', value='#{request.common.comment}')
-                h6.pull-right 320 characters remaining
-                button.btn.btn-info(type='submit') Add Comment
+              textarea#new_message.span12(name='new_message', placeholder='Type in your message', rows='5',  name='comment', value='#{request.common.comment[0]}')
+              h6.pull-right 320 characters remaining
+              button.btn.btn-info(type='submit') Add Comment
             .span6
-              form#billingform.form-horizontal(accept-charset='utf-8', action='createQalc', method='POST')
+              div#billingform.form-horizontal
                 .control-group
                   label.control-label Desired Loan Amount
                   .controls
