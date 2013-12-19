@@ -86,8 +86,8 @@ html(lang='en')
                   .controls
                     .span4
                       select.input-block-level(name='termUnit' value='#{request.req_obj.termUnit}')
-                        option Months
-                        option Years
+                        option(value='months') Months
+                        option(value='years') Years
                     .span3
                       input.input-block-level(type='text' name='term' value='#{request.req_obj.term}')
                 .control-group
