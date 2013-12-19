@@ -14,7 +14,8 @@ module.exports = function(app){
 
     app.get('/', index.index);
     app.get('/qalcSelect', index.qalcSelect);
-    app.get('/login', index.login); app.get('/myQalcs', index.myQalcs);
+    app.get('/login', index.login);
+    app.get('/myQalcs', index.myQalcs);
     app.get('/offers', index.offers);
     app.get('/bankOffer', index.bankOffer);
     app.get('/users', index.users);
@@ -36,7 +37,6 @@ module.exports = function(app){
    	app.post('/createQalc', requests.addLoanRequest);
 
    	//The below control to be phased out
-    app.get('/login', frontend.login);
     app.get('/myQalc', frontend.myQalc);
     app.get('/offerF', frontend.offerF);
     app.get('/qalc', frontend.qalc);
