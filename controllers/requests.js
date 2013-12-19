@@ -154,7 +154,7 @@ function populateCalc(err, request, res){
 			name : request.common.name,
 			description : request.common.description,
 			quote : request.req_obj.loan,
-			interest : req_obj.interestRate,
+			interest : request.req_obj.interestRate,
 			term : request.req_obj.term,
 			termUnit : request.req_obj.termUnit,
 			monthly : getPayment(request.req_obj.loan, request.term, request.rate, request.termUnit)
