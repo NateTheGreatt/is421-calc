@@ -163,7 +163,7 @@ function populateCalc(err, request, req, res){
 	
 	res.render(
 		viewsDir + req.path, 
-		calc
+		{qalcs : calc}
 	);
 }
 
