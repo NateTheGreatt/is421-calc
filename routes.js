@@ -37,7 +37,6 @@ module.exports = function(app){
    	app.post('/createQalc', requests.addLoanRequest);
 
    	//The below control to be phased out
-    app.get('/myQalc', frontend.myQalc);
     app.get('/offerF', frontend.offerF);
     app.get('/qalc', frontend.qalc);
     
