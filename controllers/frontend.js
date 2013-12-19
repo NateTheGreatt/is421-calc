@@ -18,10 +18,6 @@
         res.render('qalc');
     };
 
-    exports.users = function(req,res) {
-        res.render('users');
-    };
-
     exports.bankOffer = function(req,res) {
         res.render('bankOffer');
     };
