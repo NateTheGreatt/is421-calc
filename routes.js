@@ -15,7 +15,7 @@ module.exports = function(app){
     app.get('/', index.index);
     app.get('/qalcSelect', index.qalcSelect);
     app.get('/login', index.login);
-    app.get('/myQalcs', index.myQalcs);
+    //app.get('/myQalcs', index.myQalcs);
     app.get('/offers', index.offers);
     app.get('/bankOffer', index.bankOffer);
     app.get('/users', index.users);
