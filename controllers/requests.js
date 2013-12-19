@@ -17,7 +17,7 @@ exports.getLoanCalc = function(req, res){
 			calcType : "loan"},
 			"status calcType req_obj common",
 			null,
-			function(err, request, req){
+			function(err, request){
 				console.log("REQUEST = " + request);
 				
 				res.render(
