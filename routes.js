@@ -35,10 +35,7 @@ module.exports = function(app){
     app.get('/myQalcs', requests.getCalcs);
    	app.get('/qalc', requests.getLoanCalc);
    	app.post('/createQalc', requests.addLoanRequest);
-
-   	//The below control to be phased out
-    app.get('/qalc', frontend.qalc);
-    
+  
 
     function ensureAuthenticated(req, res, next) {
       if (req.isAuthenticated()) { return next(); }
