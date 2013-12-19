@@ -157,8 +157,11 @@ function populateCalc(err, request, req, res){
 			interest : request.req_obj.interestRate,
 			term : request.req_obj.term,
 			termUnit : request.req_obj.termUnit,
-			monthly : getPayment(request.req_obj.loan, request.term, request.rate, request.termUnit)
+			monthly : getPayment(request.req_obj.loan, request.req_obj.term, request.req_obj.interestRate, request.req_obj.termUnit)
 		});
+		
+		console.log("CALC object return is ");
+		console.log(calc);
 	}
 	
 	res.render(
@@ -171,11 +174,16 @@ function populateCalc(err, request, req, res){
 /*Throw away function. Created to output sample data in requested format*/
 function getPayment(loan, term, rate, termUnit) {
 
- var princ = loan;
  var term  = convertTerm(term, termUnit);
- var intr   = rate / 1200;
+ rate   = rate / 1200;
  
- return princ * intr / (1 - (Math.pow(1/(1 + intr), term)));
+ console.log("princ = " + princ);
+ console.log("term = " + term);
+ console.log("intr = " + intr);
+ var payment = Math.round(10 * (loan * rate / (1 - (Math.pow(1/(1 + rate), term)))))/10;
+ 
+ console.log("payment = " + payment);
+ return payment;
 }
 
 /*Throw away function. Created to output sample data in requested format*/
