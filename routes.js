@@ -6,7 +6,6 @@ module.exports = function(app){
     var passport = require('passport');
     var users = require('./controllers/users');
     var requests = require('./controllers/requests');
-    var frontend = require('./controllers/frontend');
     
     /* app.get('/', index.index);
       app.get('/admin',ensureAuthenticated , admin.main);
